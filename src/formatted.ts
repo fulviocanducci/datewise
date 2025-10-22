@@ -12,16 +12,16 @@ export class Formatted {
   }
   formatDate(value: string, format = "yyyy-MM-dd"): string | null {
     const dt = DateTime.fromFormat(value, format, { locale: this.options.locale });
-    return dt.isValid ? dt.toLocaleString(DateTime.DATE_FULL) : null;
+    return dt.isValid ? dt.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS) : null;
   }
 
-  formatTime(value: string, format = "HH:mm"): string | null {
+  formatTime(value: string, format = "HH:mm:ss"): string | null {
     const dt = DateTime.fromFormat(value, format, { locale: this.options.locale });
-    return dt.isValid ? dt.toLocaleString(DateTime.TIME_SIMPLE) : null;
+    return dt.isValid ? dt.toLocaleString(DateTime.TIME_24_SIMPLE) : null;
   }
 
   formatDateTime(value: string, format = "yyyy-MM-dd HH:mm:ss"): string | null {
     const dt = DateTime.fromFormat(value, format, { locale: this.options.locale });
-    return dt.isValid ? dt.toLocaleString(DateTime.DATETIME_FULL) : null;
+    return dt.isValid ? dt.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS) : null;
   }
 }
