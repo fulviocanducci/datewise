@@ -10,9 +10,10 @@ export class Formatted {
       locale: options.locale ?? Locales.EN_US,
     };
   }
+
   formatDate(value: string, format = "yyyy-MM-dd"): string | null {
     const dt = DateTime.fromFormat(value, format, { locale: this.options.locale });
-    return dt.isValid ? dt.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS) : null;
+    return dt.isValid ? dt.toLocaleString(DateTime.DATE_SHORT) : null;
   }
 
   formatTime(value: string, format = "HH:mm:ss"): string | null {
@@ -22,6 +23,6 @@ export class Formatted {
 
   formatDateTime(value: string, format = "yyyy-MM-dd HH:mm:ss"): string | null {
     const dt = DateTime.fromFormat(value, format, { locale: this.options.locale });
-    return dt.isValid ? dt.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS) : null;
+    return dt.isValid ? dt.toLocaleString(DateTime.DATETIME_SHORT) : null;
   }
 }

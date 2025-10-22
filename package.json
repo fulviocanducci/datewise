@@ -1,6 +1,6 @@
 {
   "name": "canducci-datewise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Date and time validation and manipulation routines.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
